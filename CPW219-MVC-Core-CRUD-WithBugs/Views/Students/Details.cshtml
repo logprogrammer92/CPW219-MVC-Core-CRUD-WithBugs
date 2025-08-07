@@ -1,0 +1,87 @@
+﻿@model CPW219_MVC_Core_CRUD_WithBugs.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h4 class="card-title mb-0">
+                        <i class="fas fa-user-circle me-2"></i>Student Details
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="student-profile p-4 bg-light rounded">
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0 text-muted">
+                                            <i class="fas fa-user me-2"></i>First Name
+                                        </h6>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h5 class="text-primary fw-bold">
+                                            @Html.DisplayFor(model => model.FirstName)
+                                        </h5>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0 text-muted">
+                                            <i class="fas fa-user-tag me-2"></i>Last Name
+                                        </h6>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h5 class="text-primary fw-bold">
+                                            @Html.DisplayFor(model => model.LastName)
+                                        </h5>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0 text-muted">
+                                            <i class="fas fa-birthday-cake me-2"></i>Date of Birth
+                                        </h6>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <span class="badge bg-info fs-6 text-dark">
+                                            @Html.DisplayFor(model => model.DateOfBirth)
+                                        </span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h6 class="mb-0 text-muted">
+                                            <i class="fas fa-id-card me-2"></i>Student ID
+                                        </h6>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <span class="badge bg-secondary fs-6">
+                                            #@Model?.StudentId
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary btn-lg me-md-2">
+                            <i class="fas fa-arrow-left me-2"></i>Back to List
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model?.StudentId" class="btn btn-warning btn-lg text-dark">
+                            <i class="fas fa-edit me-2"></i>Edit Student
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
