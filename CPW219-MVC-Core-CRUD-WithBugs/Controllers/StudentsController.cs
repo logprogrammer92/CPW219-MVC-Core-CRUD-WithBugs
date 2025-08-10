@@ -69,7 +69,7 @@ public class StudentsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create(Student student)
+    public async Task<IActionResult> CreateAsync(Student student)
     {
         if (ModelState.IsValid)
         {
